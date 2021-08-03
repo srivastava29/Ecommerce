@@ -6,12 +6,17 @@ import {notfound,errorhandler} from './middleware/errormiddleware.js'
 import productRoutes from './routes/productRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import orderRoutes from './routes/orderRoutes.js'
+import morgan from 'morgan'
 
 dotenv.config();
 console.log(process.env)
 connectDB();
 
 const app=express()
+
+if(process.env.NODE_ENV==='development'){
+    app.use(morgan('dev'))
+}
 
 app.use(express.json())
 

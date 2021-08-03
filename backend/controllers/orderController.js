@@ -1,6 +1,6 @@
 import asyncHandler from 'express-async-handler'
 import Order from '../models/OrderModel.js'
-import User from '../models/UserModel.js'
+
 
 const addOrderItems = asyncHandler(async(req,res)=>
 {
